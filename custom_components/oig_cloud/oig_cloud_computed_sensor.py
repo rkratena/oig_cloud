@@ -53,13 +53,13 @@ class OigCloudComputedSensor(OigCloudSensor):
         if self._node_id == "boiler" or self._sensor_type == "boiler_current_w":
             return self._get_boiler_consumption(pv_data)
 
-        # Spotreba CBB
-        if self._sensor_type == "cbb_consumption_w":
-            return self._get_cbb_consumption(pv_data)
+        # Spotreba nezalohy
+        if self._sensor_type == "outgrid_consumption_w":
+            return self._get_outgrid_consumption(pv_data)
 
         return None
 
-    def _get_cbb_consumption(self, pv_data) -> float:
+    def _get_outgrid_consumption(self, pv_data) -> float:
         boiler_p = 0
         if (
             len(pv_data["boiler"]) > 0

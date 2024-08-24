@@ -371,16 +371,16 @@ SENSOR_TYPES = {
         "state_class": SensorStateClass.MEASUREMENT,
         "requires": ["boiler"],
     },
-    "cbb_consumption_w": {
-        "name": "CBB - Consumption Energy (Computed)",
-        "name_cs": "CBB - Spotřeba (Vypočítaná)",
+    "outgrid_consumption_w": {
+        "name": "Outgrid consumption (approx.)",
+        "name_cs": "Spotřeba nezáloha (přibližně)",
         "device_class": SensorDeviceClass.POWER,
         "unit_of_measurement": "W",
         "node_id": None,
         "node_key": None,
         "state_class": SensorStateClass.MEASUREMENT,
     },
-            "battery_quality": {
+    "battery_quality": {
         "name": "Quality of battery",
         "name_cs": "Kvalita baterie",
         "device_class": SensorDeviceClass.POWER_FACTOR,
@@ -489,8 +489,8 @@ SENSOR_TYPES = {
         "state_class": None,
         "options": ["Vypnuto / Off", "Zapnuto / On"],
     },
-    # these don't seem to work like this, disabling
-    # "box_prms_fan1":{
+    # these don't seem to work like this (they report the same values all the time), disabling
+    # "box_prms_fan1": {
     #     "name": "Fan 1",
     #     "name_cs": "Ventilátor 1",
     #     "device_class": SensorDeviceClass.SPEED,
@@ -500,7 +500,7 @@ SENSOR_TYPES = {
     #     "state_class": SensorStateClass.MEASUREMENT,
     #     "entity_category": EntityCategory.DIAGNOSTIC,
     # },
-    # "box_prms_fan2":{
+    # "box_prms_fan2": {
     #     "name": "Fan 2",
     #     "name_cs": "Ventilátor 2",
     #     "device_class": SensorDeviceClass.SPEED,
